@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uyu to Ars Eli and Pato calculator</title>
+</head>
+<body>
+  <div>
+    <span>UYU:</span>
+    <input type="number" id="uyu" placeholder="0.00" />
+  </div>
+  <div>
+    <span>USD:</span>
+    <span id="usd"></span>
+  </div>
+  <div>
+    <span>ARS blue:</span>
+    <span id="ars-blue"></span>
+  </div>
+  <div>
+    <span>ARS Tarjeta:</span>
+    <span id="ars-cc"></span>
+  </div>
+  <script>
+    const uyu = document.getElementById('uyu');
+    const usd = document.getElementById('usd');
+    const arsCc = document.getElementById('ars-cc');
+    const arsBlue = document.getElementById('ars-blue');
+    const uruUsd = 43;
+    const arsCcUsd = 187;
+    const arsBlueUsd = 210;
+    
+    uyu.addEventListener('keyup', function(e) {
+      const uyuVal = e.target.value;
+
+      console.log(uyuVal);
+      const valueInUsd = parseInt(uyuVal) / uruUsd;
+      usd.innerText = valueInUsd.toFixed(2);
+
+      const valueInArsCc = valueInUsd * arsCcUsd;
+      arsCc.innerText = valueInArsCc.toFixed(2);
+
+      const valueInArsBlue = valueInUsd * arsBlueUsd;
+      arsBlue.innerText = valueInArsBlue.toFixed(2);
+
+    })
+
+  </script>
+</body>
+</html>
