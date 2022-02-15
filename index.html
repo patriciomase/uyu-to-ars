@@ -1,27 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  
   <title>Uyu to Ars Eli and Pato calculator</title>
 </head>
-<body>
-  <div>
-    <span>UYU:</span>
-    <input type="number" id="uyu" placeholder="0.00" />
-  </div>
-  <div>
-    <span>USD:</span>
-    <span id="usd"></span>
-  </div>
-  <div>
-    <span>ARS blue:</span>
-    <span id="ars-blue"></span>
-  </div>
-  <div>
-    <span>ARS Tarjeta:</span>
-    <span id="ars-cc"></span>
-  </div>
+<body >
+  <main class="container d-flex">
+    <div >
+      <div >
+        <span  class="span-uyu">UYU:</span>
+        <div class="row">
+          <input type="number" id="uyu" placeholder="0.00" />
+        <img src="./assets/uyu-flag.ico" alt="uruguay flag" class="icon">
+        </div>
+      </div>
+  
+      <div>
+        <span>USD:</span>
+        <div class="row">
+          <span id="usd" class="span-price"></span>
+          <img src="./assets/arg-cc.ico" alt="arg credit card" class="flag icon">
+        </div>
+        
+      </div>
+  
+      <div >
+        <span>ARS blue:</span>
+        <div class="row">
+          <span id="ars-blue">
+          <img src="./assets/arg-cc.ico" alt="arg credit card" class="flag icon">
+          </span>
+        </div>
+        
+      </div>
+  
+      <div >
+        <span>ARS Tarjeta:</span>
+        <di class="row">
+          <span id="ars-cc"></span>
+          <img src="./assets/dollars.ico" alt="dolares" class="flag icon">
+        </div>
+      
+      </div>
+    </div>
+
+    
+  </main>
+  
   <script>
     const uyu = document.getElementById('uyu');
     const usd = document.getElementById('usd');
