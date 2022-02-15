@@ -8,46 +8,30 @@
   <title>Uyu to Ars Eli and Pato calculator</title>
 </head>
 <body >
-  <main class="container d-flex">
-    <div >
-      <div >
-        <span  class="span-uyu">UYU:</span>
-        <div class="row">
-          <input type="number" id="uyu" placeholder="0.00" />
-        <img src="./assets/uyu-flag.ico" alt="uruguay flag" class="icon">
-        </div>
-      </div>
-  
-      <div>
-        <span>USD:</span>
-        <div class="row">
-          <span id="usd" class="span-price"></span>
-          <img src="./assets/arg-cc.ico" alt="arg credit card" class="flag icon">
-        </div>
-        
-      </div>
-  
-      <div >
-        <span>ARS blue:</span>
-        <div class="row">
-          <span id="ars-blue">
-          <img src="./assets/arg-cc.ico" alt="arg credit card" class="flag icon">
-          </span>
-        </div>
-        
-      </div>
-  
-      <div >
-        <span>ARS Tarjeta:</span>
-        <di class="row">
-          <span id="ars-cc"></span>
-          <img src="./assets/dollars.ico" alt="dolares" class="flag icon">
-        </div>
-      
-      </div>
+  <main class="container">
+    <div class="row">
+      <span class="currency">UYU:</span>
+      <input type="number" id="uyu" placeholder="0.00" />
+      <img src="./assets/uyu-flag.ico" alt="uruguay flag" class="flag icon" />
     </div>
 
-    
+    <div class="row">
+      <span class="currency">USD:</span>
+      <span id="usd"></span>
+      <img src="./assets/dollars.ico" alt="dolares" class="flag icon" />
+    </div>
+
+    <div class="row">
+      <span class="currency">ARS blue:</span>
+      <span id="ars-blue"></span>
+      <img src="./assets/arg-cc.ico" alt="arg credit card" class="flag icon" />
+    </div>
+
+    <div class="row">
+      <span class="currency">ARS Tarjeta:</span>
+      <span id="ars-cc"></span>
+      <img src="./assets/arg-cc.ico" alt="arg credit card" class="flag icon" />
+    </div>
   </main>
   
   <script>
@@ -58,12 +42,9 @@
     const uruUsd = 43;
     const arsCcUsd = 187;
     const arsBlueUsd = 210;
-    
-    uyu.addEventListener('keyup', function(e) {
-      const uyuVal = e.target.value;
 
-      console.log(uyuVal);
-      const valueInUsd = parseInt(uyuVal) / uruUsd;
+    function updateEverything (uyuVal) {
+      const valueInUsd = (parseInt(uyuVal) || 0) / uruUsd;
       usd.innerText = valueInUsd.toFixed(2);
 
       const valueInArsCc = valueInUsd * arsCcUsd;
@@ -71,7 +52,13 @@
 
       const valueInArsBlue = valueInUsd * arsBlueUsd;
       arsBlue.innerText = valueInArsBlue.toFixed(2);
+    }
 
+    uyu.focus();
+    uyu.select();
+
+    uyu.addEventListener('keyup', function(e) {
+    updateEverything(e.target.value);
     })
 
   </script>
