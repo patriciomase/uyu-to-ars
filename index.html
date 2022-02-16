@@ -9,7 +9,7 @@
 </head>
 <body >
   <main class="container">
-    <div class="row">
+    <div class="row main"id="row-main">
       <span class="currency">UYU:</span>
       <input type="number" id="uyu" placeholder="0.00" />
       <img src="./assets/uyu-flag.ico" alt="uruguay flag" class="flag icon" />
@@ -55,11 +55,14 @@
     }
 
     uyu.focus();
-    uyu.select();
-    uyu.click();
 
     uyu.addEventListener('keyup', function(e) {
     updateEverything(e.target.value);
+    })
+
+    const rowMain = document.getElementById('row-main');
+    rowMain.addEventListener('click', function(e) {
+      uyu.focus();
     })
 
   </script>

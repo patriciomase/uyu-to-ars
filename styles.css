@@ -49,6 +49,11 @@ span{
   height: 80px;
   width: 100%;
   justify-content: space-between;
+  padding: 5px;
+}
+
+.row.main {
+  background: aliceblue;
 }
 
 .flag {
